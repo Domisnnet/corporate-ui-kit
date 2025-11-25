@@ -8,6 +8,4 @@
 
 // Seus Componentes (UI)
 export * from './lib/components/action-button/action-button';
-
-// Seus Serviços (Regras de Negócio)
-// export * from './lib/services/auth.service';
+export * from './lib/services/theme';
