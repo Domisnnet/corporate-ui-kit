@@ -34,20 +34,20 @@
   
   /* 1. Botão Primário (Foco principal da aplicação) */
   .primary {
-    background-color: #007bff; /* Azul corporativo, forte */
-    color: #ffffff; /* Texto branco */
+    background-color: var(--cuk-color-primary);
+    color: #ffffff;
   }
   
   .primary:not(:disabled):hover {
-    background-color: #0056b3; /* Azul um pouco mais escuro ao passar o mouse */
+    background-color: var(--cuk-color-primary-dark);
   }
   
   /* 2. Botão Secundário (Ações menos importantes, ou contorno) */
   .secondary {
-    background-color: #6c757d; /* Cinza claro, neutro */
+    background-color: var(--cuk-color-secondary);
     color: #ffffff;
   }
   
   .secondary:not(:disabled):hover {
-    background-color: #5a6268; /* Cinza um pouco mais escuro */
+    background-color: var(--cuk-color-secondary-dark);
   }

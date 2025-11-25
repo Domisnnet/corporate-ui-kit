@@ -1,0 +1,17 @@
+/*
+  Define o tema padrão da sua biblioteca
+  Qualquer projeto que consumir esta biblioteca terá acesso a essas variáveis.
+*/
+:root {
+    /* Cores Primárias */
+    --cuk-color-primary: #007bff; /* Azul corporativo */
+    --cuk-color-primary-dark: #0056b3;
+    
+    /* Cores Secundárias */
+    --cuk-color-secondary: #6c757d; /* Cinza */
+    --cuk-color-secondary-dark: #5a6268;
+  
+    /* Cores de Feedback */
+    --cuk-color-success: #28a745;
+    --cuk-color-error: #dc3545;
+  }
