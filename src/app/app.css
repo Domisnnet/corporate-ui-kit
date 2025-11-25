@@ -1,16 +1,14 @@
 /*
- * 1. Estilo para o Container Principal da Página (DARK MODE ATIVADO)
- */
- .showcase-container {
+ * 1. Estilo para o Container Principal da Página
+*/
+.showcase-container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: 1200px; /* Limita a largura para melhor leitura */
-    padding: 20px;
+    max-width: 1200px; 
+    min-height: calc(100vh - 80px);
     text-align: center; 
-    
-    /* Cores Dark Mode */
-    background-color: #1a1a1a; /* Fundo cinza escuro */
-    color: #e0e0e0; /* Texto claro padrão */
-    border-radius: 10px; /* Suaviza as bordas do container */
+    color: #e0e0e0; 
 }
  
 .header {
@@ -19,38 +17,37 @@
  
 .header h1 {
     font-size: 2.8rem;
-    color: var(--cuk-color-primary, #e0e0e0); /* Mantém a cor do tema, ou branco */
+    color: var(--cuk-primary, #e0e0e0); 
     margin-bottom: 10px;
 }
 
 .header p {
     font-size: 1.5rem;
-    color: #a0a0a0; /* Cinza claro para descrição */
+    color: #a0a0a0; 
 }
  
 /*
  * 2. Estilo do Cartão de Destaque (Hero Card)
  */
 .hero-card {
-    background-color: #2c2c2c; /* Cartão em tom escuro diferente do fundo */
-    margin: 20px auto; /* Centraliza o cartão dentro do container */
+    background-color: #2c2c2c; 
+    margin: 20px auto; 
     padding: 50px;
     border-radius: 8px;
-    /* Sombra sutil para Dark Mode */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
-    border-top: 10px solid var(--cuk-color-primary, #007bff); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); 
+    border-top: 10px solid var(--cuk-primary, #007bff); 
 }
  
 .hero-card h2 {
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 10px;
-    color: #ffffff; /* Título em branco puro */
+    color: #ffffff; 
 }
  
 .hero-card p {
     font-size: 1.5rem;
-    color: #a0a0a0; /* Texto de parágrafo claro */
+    color: #a0a0a0; 
     margin-bottom: 30px;
 }
  
@@ -67,12 +64,12 @@
  * 4. Rodapé
  */
 .footer {
-    /* Mantive o fundo preto conforme solicitado, mas ajustei a cor do texto para ser legível */
+    width: 100%; 
+    box-sizing: border-box;
     background-color: #000000;
     padding: 20px;
     text-align: center;
-    margin-top: 50px;
-    font-size: 1.2rem;
-    color: #a0a0a0; /* Texto claro no rodapé */
-    border-radius: 0 0 10px 10px; /* Cantos inferiores */
+    margin-top: auto;
+    font-size: 1.3rem;
+    color: #a0a0a0; 
 }
