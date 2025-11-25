@@ -25,9 +25,13 @@
               }
             ],
             "styles": [
-              "projects/corporate-ui-kit/src/lib/styles/theme-base.css",
               "src/styles.css"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects"
+              ]
+            }
           },
           "configurations": {
             "production": {

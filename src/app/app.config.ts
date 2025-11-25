@@ -8,16 +8,10 @@ import { CukThemeConfig, ThemeService } from 'corporate-ui-kit';
 
 // Define your custom theme configuration
 const customTheme: CukThemeConfig = {
-  '--cuk-primary-color': '#6e41e2',      // A nice purple
-  '--cuk-secondary-color': '#f0f2f5',    // Light gray for backgrounds
-  '--cuk-success-color': '#4caf50',      // A friendly green
-  '--cuk-danger-color': '#f44336',       // A standard red
-  '--cuk-warning-color': '#ff9800',      // A vibrant orange
-  '--cuk-info-color': '#2196f3',         // A clear blue
-  '--cuk-light-color': '#ffffff',        // White
-  '--cuk-dark-color': '#212121',         // Dark Gray
-  '--cuk-text-color': '#333333',         // Primary text color
-  '--cuk-background-color': '#f0f2f5',   // Background color
+  primary: '#6e41e2',      // A nice purple
+  primaryDark: '#5835b0',
+  secondary: '#f0f2f5',    // Light gray for backgrounds
+  secondaryDark: '#d9dce1',
 };
 
 export const appConfig: ApplicationConfig = {

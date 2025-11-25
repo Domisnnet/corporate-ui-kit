@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { ThemeService, CukThemeConfig } from 'corporate-ui-kit';
+import { ThemeService, CukThemeConfig, ActionButtonComponent } from 'corporate-ui-kit';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, ActionButtonComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,6 +18,10 @@ export class AppComponent {
     this.initializeTheme();
   }
 
+  iniciar() {
+    console.log('Tour iniciado!');
+  }
+
   private initializeTheme(): void {
     const corporateTheme: CukThemeConfig = {
       primary: '#1A73E8',
@@ -27,5 +30,9 @@ export class AppComponent {
       secondaryDark: '#4d5156',
     };
     this.themeService.applyTheme(corporateTheme);
+  }
+
+  get currentYear(): number {
+    return new Date().getFullYear();
   }
 }

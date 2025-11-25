@@ -3,9 +3,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "paths": {
       "corporate-ui-kit": [
-        "./dist/corporate-ui-kit"
+        "projects/corporate-ui-kit/src/public-api.ts"
       ]
     },
     "strict": true,
