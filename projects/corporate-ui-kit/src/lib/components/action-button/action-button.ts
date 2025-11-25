@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'cuk-action-button',
-  imports: [],
-  templateUrl: './action-button.html',
-  styleUrl: './action-button.css',
+  template: `
+    <button
+      class="cuk-btn"
+      [class]="type()"
+      [disabled]="disabled()">
+      <ng-content></ng-content>
+    </button>
+  `,
+  styleUrls: ['./action-button.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ActionButton {
-
+export class ActionButtonComponent {
+  type = input<'primary' | 'secondary'>('primary'); // Controla a cor/estilo
+  disabled = input(false); // Controla o estado
 }
