@@ -1,22 +1,20 @@
-/*
- * Arquivo: src/styles.css (Seu CSS Global)
-*/
 body {
-    padding: 0;
     margin: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
-    background-color: #121212; 
+    background-color: #121212;
     color: #e0e0e0;
+    min-height: 100vh;
 }
   
 app-root {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    box-sizing: border-box; 
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
   
 @import '~corporate-ui-kit/styles/theme-base.css';
