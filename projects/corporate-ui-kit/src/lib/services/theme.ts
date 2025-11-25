@@ -1,54 +1,35 @@
 import { Injectable } from '@angular/core';
 
+/**
+ * Define a configuração do tema, permitindo quaisquer propriedades de string
+ * que se mapeiam para variáveis CSS.
+ */
 export interface CukThemeConfig {
-  primary?: string; 
-  primaryDark?: string; 
-  secondary?: string;
-  secondaryDark?: string;
+  [key: string]: string;
 }
 
 @Injectable({
-  // Garante que o serviço seja um Singleton disponível em toda a aplicação (library)
-  providedIn: 'root' 
+  providedIn: 'root',
 })
 export class ThemeService {
-
-  constructor() { }
-
   /**
-   * 2. Mapeamento entre a chave TypeScript e a variável CSS
-   * Isso nos permite iterar sobre as chaves e aplicar o prefixo correto.
-   */
-  private themeMap: { [key in keyof CukThemeConfig]: string } = {
-    primary: '--cuk-color-primary',
-    primaryDark: '--cuk-color-primary-dark',
-    secondary: '--cuk-color-secondary',
-    secondaryDark: '--cuk-color-secondary-dark'
-  };
-
-  /**
-   * Aplica as cores de tema customizadas no elemento raiz do DOM (:root).
-   * @param config Objeto com as cores novas a serem aplicadas.
+   * Aplica a configuração do tema ao elemento raiz do DOM.
+   * @param config Um objeto onde as chaves são nomes de variáveis CSS e os valores são as cores.
    */
   public applyTheme(config: CukThemeConfig): void {
-    // Obtém a referência ao elemento raiz do documento (<html>)
-    const root = document.documentElement; 
-    
+    const root = document.documentElement;
+
     if (!root) {
-      console.error('CUK ThemeService: Não foi possível acessar o elemento raiz do documento (<html>).');
+      console.error(
+        'CUK ThemeService: Não foi possível acessar o elemento raiz (<html>).'
+      );
       return;
     }
 
-    // Itera sobre as configurações passadas pelo usuário
+    // Itera sobre a configuração e define as propriedades CSS
     for (const key in config) {
-      if (config.hasOwnProperty(key)) {
-        const themeKey = key as keyof CukThemeConfig;
-        const cssVariable = this.themeMap[themeKey];
-        const colorValue = config[themeKey];
-        
-        if (cssVariable && colorValue) {
-          root.style.setProperty(cssVariable, colorValue);
-        }
+      if (Object.prototype.hasOwnProperty.call(config, key)) {
+        root.style.setProperty(key, config[key]);
       }
     }
 
