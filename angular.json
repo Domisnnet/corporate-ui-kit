@@ -87,6 +87,39 @@
           }
         }
       }
+    },
+    "corporate-ui-kit": {
+      "projectType": "library",
+      "root": "projects/corporate-ui-kit",
+      "sourceRoot": "projects/corporate-ui-kit/src",
+      "prefix": "cuk",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/corporate-ui-kit/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/corporate-ui-kit/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/corporate-ui-kit/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "44ee4be0-8b27-48e6-907a-766a473f9a51"
   }
 }

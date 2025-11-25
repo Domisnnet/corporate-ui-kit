@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "corporate-ui-kit": [
+        "./dist/corporate-ui-kit"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -29,6 +34,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/corporate-ui-kit/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/corporate-ui-kit/tsconfig.spec.json"
     }
   ]
 }
