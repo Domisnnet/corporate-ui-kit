@@ -1,59 +1,83 @@
-# Myapp
+# MeuApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.11.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli).
 
-## Development server
+## Servidor de Desenvolvimento
 
-To start a local development server, run:
+Para iniciar um servidor de desenvolvimento local, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Assim que o servidor estiver em execução, abra seu navegador e acesse `http://localhost:4200/`. A aplicação recarregará automaticamente sempre que você modificar qualquer um dos arquivos de origem.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Corporate UI Kit (`corporate-ui-kit`)
 
-```bash
-ng generate component component-name
-```
+O **Corporate UI Kit** é uma biblioteca Angular dedicada, que funciona como "uma coleção de componentes, serviços e padrões de design padronizados para o ambiente corporativo". Seu propósito é permitir a construção rápida de aplicações profissionais, garantindo consistência visual e máxima performance em todos os projetos.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Como Utilizar
 
-```bash
-ng generate --help
-```
+A `corporate-ui-kit` é uma biblioteca dentro deste workspace. Sempre que você fizer alterações nela (como modificar um componente ou alterar as variáveis de cores), é **necessário** recompilar a biblioteca para que as mudanças fiquem disponíveis para a aplicação principal.
 
-## Building
-
-To build the project run:
+Para compilar a biblioteca, execute o seguinte comando:
 
 ```bash
-ng build
+ng build corporate-ui-kit
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+O servidor de desenvolvimento (`ng serve`) detecta as alterações na biblioteca compilada e recarrega a aplicação automaticamente.
 
-## Running unit tests
+### Sistema de Temas (Theming)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+A `corporate-ui-kit` utiliza um sistema de temas baseado em variáveis CSS para garantir uma identidade visual consistente.
 
-```bash
-ng test
+**Arquivo Principal do Tema:**
+`projects/corporate-ui-kit/src/styles/theme-base.css`
+
+Este arquivo centraliza todas as variáveis de cores da biblioteca. Para utilizá-las em sua aplicação (`myapp`), basta importar este arquivo no seu CSS principal (`src/styles.css`), como já está configurado:
+
+```css
+/* src/styles.css */
+@import '~corporate-ui-kit/styles/theme-base.css';
 ```
 
-## Running end-to-end tests
+**Variáveis de Cores Disponíveis:**
 
-For end-to-end (e2e) testing, run:
+O prefixo `cuk-` (Corporate UI Kit) é usado para evitar conflitos com outras variáveis.
 
-```bash
-ng e2e
+*   **Cores Primárias:**
+    *   `--cuk-color-primary`: `#007bff` (Azul corporativo)
+    *   `--cuk-color-primary-dark`: `#0056b3` (Variação mais escura para hover, etc.)
+*   **Cores Secundárias:**
+    *   `--cuk-color-secondary`: `#6c757d` (Cinza secundário)
+    *   `--cuk-color-secondary-dark`: `#5a6268` (Variação mais escura)
+*   **Cores de Feedback:**
+    *   `--cuk-color-success`: `#28a745` (Indica sucesso)
+    *   `--cuk-color-error`: `#dc3545` (Indica erro)
+
+**Exemplo de Uso em um Componente:**
+
+O exemplo abaixo mostra como as variáveis de cor são usadas para estilizar o componente `action-button` dentro da própria biblioteca:
+
+```css
+/* styles/action-button.css */
+
+/* Botão Primário (Foco principal da aplicação) */
+.primary {
+  background-color: var(--cuk-color-primary);
+  color: white; /* Cor do texto definida diretamente */
+}
+
+.primary:not(:disabled):hover {
+  background-color: var(--cuk-color-primary-dark);
+}
+
+/* Botão Secundário */
+.secondary {
+  background-color: var(--cuk-color-secondary);
+  color: white;
+}
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
