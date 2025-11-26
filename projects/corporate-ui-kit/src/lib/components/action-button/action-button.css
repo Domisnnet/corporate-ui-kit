@@ -13,8 +13,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    line-height: 1; /* Alinha o texto verticalmente */
-    border-radius: 4px; /* Cantos Arredondados */
+    line-height: 1; 
+    border-radius: 8px;
     transition: background-color 0.2s ease, opacity 0.2s ease;
     font-weight: 600;
   }
@@ -35,7 +35,7 @@
   /* 1. Botão Primário (Foco principal da aplicação) */
   .primary {
     background-color: var(--cuk-color-primary);
-    color: #ffffff;
+    color: var(--cuk-text-default);
   }
   
   .primary:not(:disabled):hover {
@@ -45,7 +45,7 @@
   /* 2. Botão Secundário (Ações menos importantes, ou contorno) */
   .secondary {
     background-color: var(--cuk-color-secondary);
-    color: #ffffff;
+    color: var(--cuk-text-default);
   }
   
   .secondary:not(:disabled):hover {
