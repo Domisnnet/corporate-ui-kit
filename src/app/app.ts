@@ -22,6 +22,10 @@ export class AppComponent {
     console.log('Tour iniciado!');
   }
 
+  abrirDoc() {
+    window.open('https://github.com/Domisnnet/Corporate-ui-kit/blob/main/README.md', '_blank');
+  }  
+
   private initializeTheme(): void {
     const corporateTheme: CukThemeConfig = {
       primary: '#1A73E8',
